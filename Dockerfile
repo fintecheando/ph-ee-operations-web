@@ -11,7 +11,7 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 RUN npm rebuild node-sass --force
 RUN npm install --force
-RUN ng build --configuration kubernetes
+RUN ng build --configuration prod
 
 FROM nginx:1.19.3
 COPY nginx.conf /etc/nginx/nginx.conf
